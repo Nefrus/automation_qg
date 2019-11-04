@@ -1,6 +1,6 @@
 import os
 import subprocess
-import time
+from time import sleep
 import webbrowser
 from urllib import parse
 
@@ -10,7 +10,7 @@ from PIL import Image
 def local_sleep(t, s='', d=None):
     tmp = t
     while tmp:
-        time.sleep(1)
+        sleep(1)
         if d:
             d.click(0.01, 0.5)  # 长时间不操作可能断开连接
         tmp -= 1

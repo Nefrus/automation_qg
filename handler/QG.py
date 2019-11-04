@@ -1,7 +1,3 @@
-import json
-import os
-import time
-
 import uiautomator2 as u2
 
 from utils.database import db
@@ -142,7 +138,7 @@ def share_winxin(d):
             '//*[@resource-id="android:id/content"]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[2]/android.widget.ImageView[2]').click()
     # d.xpath('//android.widget.GridView/android.widget.RelativeLayout[4]').click()
     d(resourceId="cn.xuexi.android:id/txt_gv_item", text="分享给微信\n好友").click()
-    time.sleep(2)
+    local_sleep(2, '等待微信界面渲染完成')
     d.press("back")
     if h > 1920:
         d.xpath(
@@ -152,7 +148,7 @@ def share_winxin(d):
             '//*[@resource-id="android:id/content"]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[2]/android.widget.ImageView[2]').click()
     # d.xpath('//android.widget.GridView/android.widget.RelativeLayout[4]').click()
     d(resourceId="cn.xuexi.android:id/txt_gv_item", text="分享给微信\n好友").click()
-    time.sleep(2)
+    local_sleep(2, '等待微信界面渲染完成')
     d.press("back")
 
     # 返回主页面
