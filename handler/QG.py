@@ -70,7 +70,7 @@ def watch_video_news(d, count=6):
             title = obj.get_text()
             if not db.query_video_by_title(title):
                 obj.click()
-                local_sleep(2, '第 %d 次播放新闻联播' % (current_count + 1), d)
+                local_sleep(180, '第 %d 次播放新闻联播' % (current_count + 1), d)
                 db.insert_video(title)
                 current_count += 1
                 print('第 %s 次播放新闻联播完成' % current_count)
@@ -118,7 +118,7 @@ def watch_article(d, count=6):
             if not db.query_article_by_title(title):
                 obj.click()
                 click_collection(d)
-                local_sleep(2, '第 %d 次看新闻' % (current_count + 1), d)
+                local_sleep(120, '第 %d 次看新闻' % (current_count + 1), d)
                 db.insert_article(title)
                 current_count += 1
                 print('第 %s 次看新闻完成' % current_count)
