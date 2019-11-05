@@ -2,14 +2,14 @@
 
 
 安装u2环境： https://github.com/openatx/uiautomator2
-运行test,可以打印出信息即可
+进入run目录，运行local_run.py,可以打印出信息即可
 
 * python3.6及以上
 * 安装adb加入环境变量 https://adb.clockworkmod.com/
 * 有线连接电脑
 * 安装uiautomator2,并初始化
-* 打开开发者选项，小米的话要开发者选项打开“安全设置”
-* 关闭全面屏（不适配）
+* 打开开发者选项,打开”usb调试“、”usb安装“，小米的话要开发者选项打开“安全设置”
+* 关闭全面屏（不适配），小米手机更改为经典导航键
 * 微信登录
 * 强国app登录好，退出关闭后台
 * 系统关闭强国所有通知
