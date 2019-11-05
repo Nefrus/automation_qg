@@ -9,7 +9,9 @@ def login(d, username, passwd):
     d.app_start("cn.xuexi.android")  # 启动
     local_sleep(10, "启动app")
     if d(resourceId="cn.xuexi.android:id/fl_login_mode").exists:
+        d(resourceId="cn.xuexi.android:id/et_phone_input").clear_text()
         d(resourceId="cn.xuexi.android:id/et_phone_input").set_text(username)
+        d(resourceId="cn.xuexi.android:id/et_pwd_login").clear_text()
         d(resourceId="cn.xuexi.android:id/et_pwd_login").set_text(passwd)
         d.press("back")
         d(resourceId="cn.xuexi.android:id/btn_next").click()
