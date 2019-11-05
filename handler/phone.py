@@ -6,7 +6,7 @@ def unlock_phone(d):
     print(d.info)
     print(d.window_size())
     res = subprocess.check_output("adb shell dumpsys window policy | grep mShow", shell=True).decode('utf-8')
-    if 'mShowingLockscreen=false' in res:
+    if 'mShowingLockscreen=false' in res or 'mDreamingLockscreen=false' in res:
         subprocess.call("adb shell input keyevent 26", shell=True)  # 唤醒关闭屏幕
 
     subprocess.call("adb shell input keyevent 26", shell=True)  # 唤醒关闭屏幕

@@ -73,7 +73,7 @@ class DB(object):
                                      microseconds=now.microsecond)
         # 获取23:59:59
         last_today = zero_today + timedelta(hours=23, minutes=59, seconds=59)
-        return zero_today, last_today
+        return str(zero_today), str(last_today)
 
     def query_article_today_number(self):
         """
@@ -81,7 +81,7 @@ class DB(object):
         :return:
         """
         zero_today, last_today = self.get_today_time_range()
-        sql = 'select count(*) from article where ? <= create_time < ?'
+        sql = 'select count(*) from article where create_time >= ? and create_time < ?'
         self.cursor.execute(sql, (zero_today, last_today))
         rows = self.cursor.fetchall()
         # print(rows[0][0])
@@ -95,7 +95,7 @@ class DB(object):
         :return:
         """
         zero_today, last_today = self.get_today_time_range()
-        sql = 'select count(*) from video where ? <= create_time < ?'
+        sql = 'select count(*) from video where create_time >= ? and create_time < ?'
         self.cursor.execute(sql, (zero_today, last_today))
         rows = self.cursor.fetchall()
         # print(rows[0][0])
