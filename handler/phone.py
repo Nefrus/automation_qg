@@ -11,7 +11,6 @@ def unlock_phone(d):
 
     subprocess.call("adb shell input keyevent 26", shell=True)  # 唤醒关闭屏幕
     # subprocess.call("adb shell input keyevent 26", shell=True)  # 唤醒关闭屏幕
-    d.double_click(0.5, 0.5)
     d.drag(0.5, 0.8, 0.5, 0.1)
     sleep(2)
     d(text="1").click()
